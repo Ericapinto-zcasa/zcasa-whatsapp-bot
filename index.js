@@ -12,7 +12,7 @@ sock.ev.on("creds.update", saveState);
 app.post("/mensagem", async (req, res) => {
   const { telefone, mensagem, token } = req.body;
 
-  if (token !== "GAwZJ87PwsYF9jK12qP4FekrA6G4wacC") {
+  if (token !== process.env.TOKEN_SEGURANCA) {
     return res.status(403).send("Token inválido");
   }
 
